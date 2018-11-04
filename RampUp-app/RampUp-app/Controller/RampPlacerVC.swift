@@ -103,7 +103,6 @@ class RampPlacerVC: UIViewController, ARSCNViewDelegate , UIPopoverPresentationC
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        
         let results = sceneView.hitTest(touch.location(in: sceneView), types: [.featurePoint])
         guard let hitFeature = results.last else { return }
         let hitTransform = SCNMatrix4(hitFeature.worldTransform)
